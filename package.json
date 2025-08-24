@@ -1,20 +1,20 @@
 {
-  "name": "benhorner.dev",
-  "version": "0.0.0-semantically-released",
-  "type": "module",
-  "devDependencies": {
-    "@biomejs/biome": "2.2.2",
-    "@commitlint/cli": "19.8.1",
-    "@commitlint/config-conventional": "19.8.1"
-  },
-  "packageManager": "bun@1.2.20",
-  "scripts": {},
-  "trustedDependencies": [],
-  "workspaces": [
-    "apps/*"
-  ],
-  "dependencies": {
-    "lefthook": "1.12.3"
-  },
-  "resolutions": {}
+	"name": "benhorner.dev",
+	"version": "0.0.0-semantically-released",
+	"type": "module",
+	"devDependencies": {
+		"@biomejs/biome": "2.2.2",
+		"@commitlint/cli": "19.8.1",
+		"@commitlint/config-conventional": "19.8.1"
+	},
+	"packageManager": "bun@1.2.20",
+	"scripts": {},
+	"trustedDependencies": [],
+	"workspaces": [
+		"apps/*"
+	],
+	"dependencies": {
+		"lefthook": "1.12.3"
+	},
+	"resolutions": {}
 }
