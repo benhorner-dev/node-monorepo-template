@@ -1,0 +1,4 @@
+commit-msg:
+  commands:
+    "lint commit message":
+      run: bunx commitlint --config ./.config/commitlint.config.js --edit {1}
