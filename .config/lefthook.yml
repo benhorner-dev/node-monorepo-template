@@ -2,3 +2,7 @@ commit-msg:
   commands:
     "lint commit message":
       run: bunx commitlint --config ./.config/commitlint.config.js --edit {1}
+    lint:
+      run: bunx biome check --config-path ./.config/biome.json --write {staged_files}
+    format:
+      run: bunx biome format --config-path ./.config/biome.json --write {staged_files}
