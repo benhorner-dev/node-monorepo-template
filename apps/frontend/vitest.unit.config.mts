@@ -13,7 +13,11 @@ export default defineConfig({
 			reporter: ["text", "json", "html", "lcov"],
 			reportsDirectory: "coverage",
 			include: ["src/**/*"],
-			exclude: ["src/**/*.{test,spec}.{js,ts,jsx,tsx}", "src/**/__tests__/**"],
+			exclude: [
+				"src/**/*.{test,spec}.{js,ts,jsx,tsx}",
+				"src/**/__tests__/**",
+				"src/test/**",
+			],
 		},
 		clearMocks: true,
 		passWithNoTests: true,
