@@ -10,7 +10,8 @@
 		"format": "biome format --write",
 		"test:unit": "vitest --run --exclude='**/*.spec.{ts,tsx}'",
 		"test:integration": "vitest --run --config ./vitest.integration.config.mts",
-		"test": "vitest --run"
+		"test": "vitest --run",
+		"test:e2e": "bunx playwright test"
 	},
 	"dependencies": {
 		"next": "15.5.0",
