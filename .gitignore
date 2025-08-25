@@ -46,7 +46,7 @@ yarn-error.log*
 .turbo
 
 # vs code
-.vscode
+.vscode/settings.json
 
 # typescript
 *.tsbuildinfo
