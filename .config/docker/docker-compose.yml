@@ -33,6 +33,20 @@ services:
       - ../../volumes/metrics-postgres:/var/lib/postgresql/data
     ports:
       - "5433:5432"
+  neo4j:
+    container_name: benhorner-dev-neo4j
+    image: neo4j:latest
+    volumes:
+        - ../../volumes/neo4j/logs:/logs
+        - ../../volumes/neo4j/config:/config
+        - ../../volumes/neo4j/data:/data
+        - ../../volumes/neo4j/plugins:/plugins
+    environment:
+        - NEO4J_AUTH=neo4j/password
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    restart: always
   redis:
     container_name: benhorner-dev-redis
     image: redis:7-alpine
