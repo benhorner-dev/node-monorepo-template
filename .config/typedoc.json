@@ -1,6 +1,6 @@
 {
   "$schema": "https://typedoc.org/schema.json",
-  "name": "Nexties Documentation",
+  "name": "Ben Horner's Documentation",
   "entryPoints": ["../apps/frontend"],
   "entryPointStrategy": "packages",
   "out": "../docs/code-docs",
