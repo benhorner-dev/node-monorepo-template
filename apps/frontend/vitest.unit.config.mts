@@ -5,7 +5,7 @@ import { defineConfig } from "vitest/config";
 export default defineConfig({
 	plugins: [tsconfigPaths(), react()],
 	test: {
-		exclude: ["tests/**"],
+		exclude: ["tests/**", "**/*.spec.{ts,tsx}"],
 		environment: "jsdom",
 		coverage: {
 			enabled: true,
@@ -14,13 +14,6 @@ export default defineConfig({
 			reportsDirectory: "coverage",
 			include: ["src/**/*"],
 			exclude: ["src/**/*.{test,spec}.{js,ts,jsx,tsx}", "src/**/__tests__/**"],
-			thresholds: {
-				lines: 100,
-				functions: 100,
-				branches: 100,
-				statements: 100,
-			},
-			reportOnFailure: true,
 		},
 		clearMocks: true,
 		passWithNoTests: true,

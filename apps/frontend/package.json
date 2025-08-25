@@ -4,13 +4,14 @@
 	"private": true,
 	"scripts": {
 		"dev": "next dev --turbopack & docker compose -f ../../.config/docker/docker-compose.yml up",
+		"dev:fe": "next dev --turbopack",
 		"build": "next build --turbopack",
 		"start": "next start",
-		"lint": "biome check",
-		"format": "biome format --write",
-		"test:unit": "vitest --run --exclude='**/*.spec.{ts,tsx}'",
+		"lint": "biome check --config-path ../../.config/biome.json",
+		"format": "biome format --write --config-path ../../.config/biome.json",
+		"test:unit": "vitest --run --config ./vitest.unit.config.mts",
 		"test:integration": "vitest --run --config ./vitest.integration.config.mts",
-		"test": "vitest --run",
+		"test": "vitest --run ",
 		"test:e2e": "bunx playwright test"
 	},
 	"dependencies": {
