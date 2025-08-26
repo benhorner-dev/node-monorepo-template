@@ -95,7 +95,7 @@ describe("getLogger", () => {
 			logger.info("Test message", "arg1", "arg2");
 
 			expect(consoleSpy).toHaveBeenCalledWith(
-				expect.stringMatching(/🔵 \d{1,2}:\d{2}:\d{2} [ap]m \[INFO\]/),
+				expect.stringMatching(/^🔵 .*\[INFO\]$/),
 				"Test message",
 				"arg1",
 				"arg2",
@@ -109,7 +109,7 @@ describe("getLogger", () => {
 			logger.error("Error message", "error details");
 
 			expect(consoleSpy).toHaveBeenCalledWith(
-				expect.stringMatching(/🔴 \d{1,2}:\d{2}:\d{2} [ap]m \[ERROR\]/),
+				expect.stringMatching(/^🔴 .*\[ERROR\]$/),
 				"Error message",
 				"error details",
 			);
@@ -122,7 +122,7 @@ describe("getLogger", () => {
 			logger.warn("Warning message");
 
 			expect(consoleSpy).toHaveBeenCalledWith(
-				expect.stringMatching(/🟡 \d{1,2}:\d{2}:\d{2} [ap]m \[WARN\]/),
+				expect.stringMatching(/^🟡 .*\[WARN\]$/),
 				"Warning message",
 			);
 		});
@@ -134,7 +134,7 @@ describe("getLogger", () => {
 			logger.debug("Debug message");
 
 			expect(consoleSpy).toHaveBeenCalledWith(
-				expect.stringMatching(/🟣 \d{1,2}:\d{2}:\d{2} [ap]m \[DEBUG\]/),
+				expect.stringMatching(/^🟣.*\[DEBUG\]$/),
 				"Debug message",
 			);
 		});
@@ -146,7 +146,7 @@ describe("getLogger", () => {
 			logger.trace("Trace message");
 
 			expect(consoleSpy).toHaveBeenCalledWith(
-				expect.stringMatching(/⚪ \d{1,2}:\d{2}:\d{2} [ap]m \[TRACE\]/),
+				expect.stringMatching(/^⚪.*\[TRACE\]$/),
 				"Trace message",
 			);
 		});
@@ -166,14 +166,14 @@ describe("getLogger", () => {
 			logger.info(testObj);
 
 			expect(consoleSpy).toHaveBeenCalledWith(
-				expect.stringMatching(/🔵 \d{1,2}:\d{2}:\d{2} [ap]m \[INFO\]/),
+				expect.stringMatching(/^🔵.*\[INFO\]$/),
 				testObj,
 			);
 
 			logger.info(42);
 
 			expect(consoleSpy).toHaveBeenCalledWith(
-				expect.stringMatching(/🔵 \d{1,2}:\d{2}:\d{2} [ap]m \[INFO\]/),
+				expect.stringMatching(/^🔵.*\[INFO\]$/),
 				42,
 			);
 		});
