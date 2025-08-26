@@ -5,15 +5,20 @@ import { defineConfig } from "vitest/config";
 export default defineConfig({
 	plugins: [tsconfigPaths(), react()],
 	test: {
-		exclude: ["tests/**"],
+		exclude: ["tests/**", "node_modules/**", ".next/**"],
 		environment: "jsdom",
+		setupFiles: ["./src/test/setup.ts"],
 		coverage: {
 			enabled: true,
 			provider: "v8",
 			reporter: ["text", "json", "html", "lcov"],
 			reportsDirectory: "coverage",
 			include: ["src/**/*"],
-			exclude: ["src/**/*.{test,spec}.{js,ts,jsx,tsx}", "src/**/__tests__/**"],
+			exclude: [
+				"src/**/*.{test,spec}.{js,ts,jsx,tsx}",
+				"src/**/__tests__/**",
+				"src/test/**",
+			],
 			thresholds: {
 				lines: 100,
 				functions: 100,
