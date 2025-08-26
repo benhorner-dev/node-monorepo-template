@@ -16,6 +16,8 @@ pre-push:
   commands:
     bun-audit:
       run: bun audit --audit-level=moderate
+    test:
+      run: bunx turbo test:unit
 
 commit-msg:
   commands:
