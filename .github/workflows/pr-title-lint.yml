@@ -28,4 +28,4 @@ jobs:
         run: npm install -g @commitlint/cli @commitlint/config-conventional
       - name: Lint PR title
         run: |
-          echo "${{ github.event.pull_request.title }}" | npx commitlint
+          echo "${{ github.event.pull_request.title }}" | npx commitlint --config ./.config/commitlint.config.js
